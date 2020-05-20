@@ -6,7 +6,15 @@
 		open=leftSideBarOpen
 		lockedOpen=true
 		onToggle=(action (mut leftSideBarOpen))}}
-		{{#paper-list}}
+		{{#paper-toolbar}}
+		{{#paper-toolbar-tools}}
+		{{#paper-button iconButton=true}}
+		{{paper-icon "menu"}}
+		{{/paper-button}}
+		<h2>Books</h2>
+		{{/paper-toolbar-tools}}
+		{{/paper-toolbar}}
+		{{#paper-list class="independent-scroll"}}
 		{{#each @model as |book|}}
 		<LinkTo @route='books.passages' @model={{book.id}}>
 			{{#paper-item class="md-2-line"}}

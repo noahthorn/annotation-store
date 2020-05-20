@@ -1,6 +1,11 @@
 <div id="inside-container">
 	<div id="passages-list" class="md-whiteframe-z2">
-		{{#paper-list}}
+		{{#paper-toolbar}}
+		{{#paper-toolbar-tools}}
+		<h2>{{@model.title}}</h2>
+		{{/paper-toolbar-tools}}
+		{{/paper-toolbar}}
+		{{#paper-list class="independent-scroll"}}
 		{{#each @model.passages as |passage|}}
 		{{#paper-item class="md-3-line md-long-text"}}
 		<div class="md-list-item-text">

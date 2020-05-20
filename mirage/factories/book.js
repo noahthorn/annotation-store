@@ -12,6 +12,6 @@ export default Factory.extend({
 		return 'book-' + i;
 	},
 	afterCreate(book, server) {
-		server.createList('passage', 5, { book });
+		server.createList('passage', 10, { book });
 	}
 });

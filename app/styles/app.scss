@@ -1,9 +1,8 @@
 @import 'ember-paper';
 
-/* .container {
-	display: grid;
-	grid-template-columns: 1fr 2fr 1fr;
-} */
+main.container {
+	height: 100vh;
+}
 
 h2 {
 	text-align: center;
@@ -13,4 +12,11 @@ h2 {
 div#inside-container {
 	display: grid;
 	grid-template-columns: 2fr 1fr;
+}
+
+// Independent scrolling
+.independent-scroll {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	height: 80vh;
 }
