@@ -1,0 +1,9 @@
+<div id="book-list">
+<ul>
+	{{#each @model as |book|}}
+	<li><LinkTo @route='books.passages' @model={{book.id}}>{{book.title}}</LinkTo></li>
+	{{/each}}
+</ul>
+</div>
+
+{{outlet}}

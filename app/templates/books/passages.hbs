@@ -1,0 +1,9 @@
+<div id="passages-list">
+<ul>
+	{{#each @model.passages as |passage|}}
+	<li><LinkTo @route='books.passages.annotations' @model={{passage.id}}>{{passage.text}}</LinkTo></li>
+	{{/each}}
+</ul>
+</div>
+
+{{outlet}}
