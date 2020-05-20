@@ -1,7 +1,9 @@
 <div id="annotations-list">
-<ul>
+{{#paper-list}}
 	{{#each @model.annotations as |annotation|}}
-	<li>{{annotation.text}}</li>
+	{{#paper-item}}
+	<p>{{annotation.text}}</p>
+	{{/paper-item}}
 	{{/each}}
-</ul>
+{{/paper-list}}
 </div>

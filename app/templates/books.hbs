@@ -1,9 +1,28 @@
+{{#paper-sidenav-container class="inner-sidenav"}}
 <div id="book-list">
-<ul>
-	{{#each @model as |book|}}
-	<li><LinkTo @route='books.passages' @model={{book.id}}>{{book.title}}</LinkTo></li>
-	{{/each}}
-</ul>
-</div>
+	{{#paper-sidenav
+		class="md-whiteframe-z2"
+		name="left"
+		open=leftSideBarOpen
+		lockedOpen=true
+		onToggle=(action (mut leftSideBarOpen))}}
+		{{#paper-list}}
+		{{#each @model as |book|}}
+		<LinkTo @route='books.passages' @model={{book.id}}>
+			{{#paper-item class="md-2-line"}}
+			{{paper-icon "book" class="md-avatar"}}
+			<div class="md-list-item-text">
+				<h3>{{book.title}}</h3>
+				<i style="font-size: .8em;">{{book.author}}</i>
+			</div>
+			{{/paper-item}}
+		</LinkTo>
+		{{paper-divider}}
+		{{/each}}
+		{{/paper-list}}
+		{{/paper-sidenav}}
+	</div>
 
-{{outlet}}
+	{{outlet}}
+
+	{{/paper-sidenav-container}}

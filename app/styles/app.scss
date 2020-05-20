@@ -1,0 +1,16 @@
+@import 'ember-paper';
+
+/* .container {
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+} */
+
+h2 {
+	text-align: center;
+}
+
+// Inside container
+div#inside-container {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+}

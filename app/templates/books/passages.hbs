@@ -1,9 +1,17 @@
-<div id="passages-list">
-<ul>
-	{{#each @model.passages as |passage|}}
-	<li><LinkTo @route='books.passages.annotations' @model={{passage.id}}>{{passage.text}}</LinkTo></li>
-	{{/each}}
-</ul>
-</div>
+<div id="inside-container">
+	<div id="passages-list" class="md-whiteframe-z2">
+		{{#paper-list}}
+		{{#each @model.passages as |passage|}}
+		{{#paper-item class="md-3-line md-long-text"}}
+		<div class="md-list-item-text">
+			<LinkTo @route='books.passages.annotations' @model={{passage.id}}>{{passage.location}}</LinkTo>
+			<p>{{passage.text}}</p>
+		</div>
+		{{/paper-item}}
+		{{/each}}
+		{{/paper-list}}
+	</div>
 
-{{outlet}}
+	{{outlet}}
+
+</div>
