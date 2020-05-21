@@ -1,8 +1,8 @@
 import Route from '@ember/routing/route';
 
 export default class BooksRoute extends Route {
-	model() {
+	async model() {
 		console.log('The books model hook just ran.');
-		return this.store.findAll('book');
+		return await this.store.findAll('book');
 	}
 }

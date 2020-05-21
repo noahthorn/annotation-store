@@ -1,9 +1,14 @@
 <div id="annotations-list">
-{{#paper-list}}
+	{{#paper-toolbar}}
+	{{#paper-toolbar-tools}}
+	<h2>Annotations</h2>
+	{{/paper-toolbar-tools}}
+	{{/paper-toolbar}}
+	{{#paper-list}}
 	{{#each @model.annotations as |annotation|}}
 	{{#paper-item}}
 	<p>{{annotation.text}}</p>
 	{{/paper-item}}
 	{{/each}}
-{{/paper-list}}
+	{{/paper-list}}
 </div>

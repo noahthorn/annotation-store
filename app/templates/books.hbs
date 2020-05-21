@@ -1,14 +1,17 @@
 {{#paper-sidenav-container class="inner-sidenav"}}
-<div id="book-list">
+<div id="book-list" style="position: relative;">
+	<div id="toggled-button" class="{{if this.isOpen "hide" "show"}}">
+		{{#paper-button iconButton=true onClick=(action "toggle")}}
+		{{paper-icon "menu"}}
+		{{/paper-button}}
+	</div>
 	{{#paper-sidenav
 		class="md-whiteframe-z2"
 		name="left"
-		open=leftSideBarOpen
-		lockedOpen=true
-		onToggle=(action (mut leftSideBarOpen))}}
+		lockedOpen=this.isOpen}}
 		{{#paper-toolbar}}
 		{{#paper-toolbar-tools}}
-		{{#paper-button iconButton=true}}
+		{{#paper-button iconButton=true onClick=(action "toggle")}}
 		{{paper-icon "menu"}}
 		{{/paper-button}}
 		<h2>Books</h2>
