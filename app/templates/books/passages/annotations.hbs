@@ -1,12 +1,8 @@
 <div id="annotations-list">
-	{{#paper-toolbar}}
-	{{#paper-toolbar-tools}}
-	<h2>Annotations</h2>
-	{{/paper-toolbar-tools}}
-	{{/paper-toolbar}}
 	{{#paper-list}}
+	<h3 id="annotations-header">Annotations</h3>
 	{{#each @model.annotations as |annotation|}}
-	{{#paper-item}}
+	{{#paper-item class="md-1-line"}}
 	<p>{{annotation.text}}</p>
 	{{/paper-item}}
 	{{/each}}

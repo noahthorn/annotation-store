@@ -1,11 +1,14 @@
 <div id="inside-container">
 	<div id="passages-list" class="md-whiteframe-z2">
-		{{#paper-toolbar}}
-		{{#paper-toolbar-tools}}
-		<h2>{{@model.title}}</h2>
-		{{/paper-toolbar-tools}}
-		{{/paper-toolbar}}
-		{{#paper-list class="independent-scroll"}}
+		<div id="button-book-title">
+			<div id="toggled-button" class="{{if this.isOpen "hide" "show"}}">
+				{{#paper-button iconButton=true onClick=(action "toggle")}}
+				{{paper-icon "menu"}}
+				{{/paper-button}}
+			</div>
+			<h2>{{@model.title }}</h2>
+		</div>
+		{{#paper-list class="independent-scroll "}}
 		{{#each @model.passages as |passage|}}
 		{{#paper-item class="md-3-line md-long-text"}}
 		<div class="md-list-item-text">

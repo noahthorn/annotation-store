@@ -8,10 +8,23 @@ h2 {
 	text-align: center;
 }
 
+h3#annotations-header {
+	padding-left: 16px;
+}
+
 // Inside container
 div#inside-container {
 	display: grid;
-	grid-template-columns: 2fr 1fr;
+	grid-template-columns: minmax(700px, 2fr) 1fr;
+}
+
+// Title and button in center column
+div#button-book-title {
+	position: relative;
+}
+
+div#toggled-button {
+	position: absolute;
 }
 
 // Independent scrolling

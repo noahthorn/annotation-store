@@ -12,4 +12,5 @@ Router.map(function() {
       this.route('annotations', { path: '/:passage_id' });;
     });
   });
+  this.route('redirect', { path: '/' });
 });

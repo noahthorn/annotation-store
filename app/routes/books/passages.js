@@ -7,4 +7,12 @@ export default class BooksPassagesRoute extends Route {
 		console.log(book);
 		return book; 
 	}
+
+	// Use books controller for button toggle
+	renderTemplate(controller, model) {
+		let booksController = this.controllerFor('books');
+		this.render('books.passages', {
+			controller: booksController
+		});
+	}
 }
