@@ -1,11 +1,17 @@
 @import 'ember-paper';
 
 main.container {
-	height: auto;
 }
 
 h2 {
 	text-align: center;
+}
+
+div#header {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }
 
 h3#annotations-header {
@@ -59,9 +65,9 @@ div#button-book-title {
 .annotation-box {
 	position: absolute;
 	right: 40px;
-	opacity: .3;
+	opacity: .5;
 }
-.annotation-box:hover{
+.annotation-box:hover {
 	animation-name: opacity-change;
 	animation-duration: .5s;
 	opacity: 1;
@@ -69,6 +75,6 @@ div#button-book-title {
 
 // Hover animations
 @keyframes opacity-change {
-	from {opacity: .3;}
+	from {opacity: .5;}
 	to {opacity: 1;}
 }

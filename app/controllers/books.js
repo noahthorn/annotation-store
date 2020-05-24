@@ -25,12 +25,10 @@ export default class BooksController extends Controller {
 
 		// display box logic
 		let pairOutlet = document.body.querySelector("#outlet-" + passage_id);
-		console.log(pairOutlet);
 		pairOutlet.previousElementSibling.classList.add('relative');
 		pairOutlet.classList.toggle('hide');
-		// pairOutlet.classList.add('annotation-box');
 
-		// set this outlet to global
+		// set this outlet to global variable
 		this.set('prevBox', pairOutlet);
 
 		// move to annotations route
