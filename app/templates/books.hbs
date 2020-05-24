@@ -1,5 +1,5 @@
 {{#paper-sidenav-container class="inner-sidenav"}}
-<div id="book-list" style="position: relative;">
+<div id="book-list">
 	{{#paper-sidenav
 		class="md-whiteframe-z2"
 		name="left"
@@ -10,6 +10,10 @@
 		{{paper-icon "menu"}}
 		{{/paper-button}}
 		<h2>Books</h2>
+		<span class="flex"></span>
+		<PaperButton @iconButton=true @onClick={{action "helpButton"}}>
+			{{paper-icon "help-outline"}}
+		</PaperButton>
 		{{/paper-toolbar-tools}}
 		{{/paper-toolbar}}
 		{{#paper-list class="independent-scroll"}}
@@ -29,6 +33,15 @@
 		{{/paper-sidenav}}
 	</div>
 
-	{{outlet}}
+	<div id="help-pop" class="hide">
+		<PaperCard as |card|>
+		<card.content style="max-width: 250px;">
+			Select a book from this menu to see its marked passages.
+			Select a passage to view its annotations.
+		</card.content>
+	</PaperCard>
+</div>
 
-	{{/paper-sidenav-container}}
+{{outlet}}
+
+{{/paper-sidenav-container}}

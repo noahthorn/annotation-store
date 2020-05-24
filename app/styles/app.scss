@@ -12,10 +12,26 @@ h3#annotations-header {
 	padding-left: 16px;
 }
 
+// Help pop-up
+div#book-list {
+	position: absolute;
+	z-index: 2;
+}
+div#help-pop {
+	position: absolute;
+	left: 308px;
+	z-index: 3;
+}
+
+
 // Inside container
-div#inside-container {
-	display: grid;
-	grid-template-columns: minmax(700px, 2fr) 1fr;
+div#passage-container {
+	display: flex;
+	margin: 0 auto;
+	flex-direction: column;
+	justify-content: center;
+	max-width: 800px;
+	z-index: 1;
 }
 
 // Title and button in center column
@@ -23,13 +39,35 @@ div#button-book-title {
 	position: relative;
 }
 
-div#toggled-button {
+/* div#toggled-button {
 	position: absolute;
-}
+	top: 15px;
+} */
 
 // Independent scrolling
 .independent-scroll {
 	overflow-y: scroll;
 	overflow-x: hidden;
 	height: 80vh;
+}
+
+// Annotation hover box
+.relative {
+	position: relative;
+}
+.annotation-box {
+	position: absolute;
+	right: 40px;
+	opacity: .3;
+}
+.annotation-box:hover{
+	animation-name: opacity-change;
+	animation-duration: .5s;
+	opacity: 1;
+}
+
+// Hover animations
+@keyframes opacity-change {
+	from {opacity: .3;}
+	to {opacity: 1;}
 }
